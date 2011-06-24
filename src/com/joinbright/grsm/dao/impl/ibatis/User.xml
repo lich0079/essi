@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="User">
+
+  	<!-- Use type aliases to avoid typing the full classname every time. -->
+  	<typeAlias alias="User" type="com.joinbright.grsm.model.User"/>
+	
+	<insert id="save" parameterClass="User">
+	    insert into t_user (
+	      id,
+	      username,
+	      password,
+	      age,
+	      sex)
+	    values (
+	      #id#, #username#,#password#,#age#,#sex#
+	    )
+	</insert>
+	
+	<update id="update" parameterClass="User">
+	    update t_user set
+	      username = #username#,
+	      password = #password#,
+	      age = #age#,
+	      sex = #sex#
+	    where
+	      id = #id#
+    </update>
+	
+	<resultMap class="User" id="userResult">
+	  	  <result property="id" column="id"/>
+	  	  <result property="username" column="username"/>
+	  	  <result property="password" column="password"/>
+	  	  <result property="age" column="age"/>
+	  	  <result property="sex" column="sex"/>
+  	</resultMap>
+  	
+	<select id="findAll" resultMap="userResult">
+		select * from t_user
+	</select>
+	
+	<select id="findById" parameterClass="Integer" resultMap="userResult">
+		select
+	      id as id,
+	      username2 as username,
+	      password3 as password,
+	      age as age,
+	      sex as sex
+	    from t_user
+	    where id = #id#
+	</select>
+	
+	<delete id="remove" parameterClass="User">
+    delete from t_user where id = #id#
+  </delete>
+</sqlMap>

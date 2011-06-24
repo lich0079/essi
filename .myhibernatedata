@@ -1,0 +1,22 @@
+#
+#Thu Jun 18 17:01:29 CST 2009
+genBasicCompId=false
+sessionFactoryName=com.joinbright.grsm.model.base.HibernateSessionFactory
+profile=
+daoSFId=
+version=3.2
+jndiPath=
+detectM2M=false
+reStrategyClass=
+springDaoFile=
+useJavaTypes=true
+keyGenerator=
+libInstallFolder=/WebRoot/WEB-INF/lib
+addLibs2Project=true
+genVersionTag=false
+sessionFactoryId=
+basePersistenceClass=com.joinbright.grsm.model.BaseModel
+reSettingsFile=/grsm/hibernate.reveng.xml
+configFile=/grsm/src/hibernate.cfg.xml
+createConfigFile=true
+addLibs2Classpath=true
